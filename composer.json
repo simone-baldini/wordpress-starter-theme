@@ -1,0 +1,13 @@
+{
+    "name": "simone-baldini/wordpress-starter-theme",
+    "description": "A a productivity-driven WordPress starter theme with a modern development workflow.",
+    "type": "wordpress-theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "simone baldini",
+            "email": "info@simonebaldini.dev"
+        }
+    ],
+    "require": {}
+}
