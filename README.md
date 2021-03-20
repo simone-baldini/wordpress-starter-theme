@@ -1,6 +1,6 @@
 # WordPress Starter Theme
 
-A a productivity-driven WordPress starter theme with a modern development workflow.
+A productivity-driven WordPress starter theme with a modern development workflow.
 
 ## Requirements
 
