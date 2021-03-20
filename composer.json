@@ -1,13 +1,33 @@
 {
-    "name": "simone-baldini/wordpress-starter-theme",
-    "description": "A a productivity-driven WordPress starter theme with a modern development workflow.",
-    "type": "wordpress-theme",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "simone baldini",
-            "email": "info@simonebaldini.dev"
-        }
+  "name": "simone-baldini/wordpress-starter-theme",
+  "description": "A a productivity-driven WordPress starter theme with a modern development workflow.",
+  "type": "wordpress-theme",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "simone baldini",
+      "email": "info@simonebaldini.dev"
+    }
+  ],
+  "require": {
+    "symfony/console": "^5.2",
+    "simone-baldini/wordpress-starter-theme-installer": "^1.0"
+  },
+  "homepage": "https://github.com/simone-baldini/wordpress-starter-theme/",
+  "keywords": [
+    "wordpress"
+  ],
+  "support": {
+    "issues": "https://github.com/simone-baldini/wordpress-starter-theme/issues"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "scripts": {
+    "post-autoload-dump": [
+      "SimoneBaldini\\WordPressStarterTheme\\Installer::run"
     ],
-    "require": {}
+    "post-install-cmd": [
+      "npm install"
+    ]
+  }
 }

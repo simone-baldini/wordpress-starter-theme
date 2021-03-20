@@ -1,0 +1,51 @@
+{
+  "name": "blank",
+  "version": "1.0.0",
+  "description": "WordPress starter theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "babel elementor/scripts/src --out-dir elementor/scripts/dist --watch"
+  },
+  "author": "smn.baldini@gmail.com",
+  "license": "ISC",
+  "keywords": [
+    "wordpress",
+    "theme",
+    "blank"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-preset-minify": "^0.5.1",
+    "babelify": "^10.0.0",
+    "browser-sync": "^2.26.3",
+    "browserify": "^16.5.1",
+    "del": "^4.1.1",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.12.0",
+    "gulp": "^4.0.0",
+    "gulp-buffer": "0.0.2",
+    "gulp-clone": "^2.0.1",
+    "gulp-flatten": "^0.4.0",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-tap": "^1.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webp": "^4.0.1",
+    "node-sass": "^4.11.0",
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
+    "stylelint-config-wordpress": "^16.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "browserify-shim": "^3.8.14",
+    "jquery": "^3.4.0",
+    "jquery-form": "^4.2.2",
+    "js-cookie": "^2.2.1",
+    "popper.js": "^1.15.0",
+    "swiper": "^4.5.0"
+  }
+}
