@@ -61,8 +61,8 @@ add_action(
 		if ( is_single() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-		wp_enqueue_script( 'core/js', Assets\asset_path( 'scripts/main.js' ), array(), null, true );
-		wp_enqueue_style( 'core/css', Assets\asset_path( 'styles/main.css' ), false, time() );
+		wp_enqueue_script( 'theme/js@defer', Assets\asset_path( 'scripts/main.js' ), array(), '1.0', true );
+		wp_enqueue_style( 'theme/css', Assets\asset_path( 'styles/main.css' ), false, '1.0' );
 	},
 	100
 );

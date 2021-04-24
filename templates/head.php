@@ -3,10 +3,6 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="icon" href="<?php echo \SimoneBaldini\WordPressStarterTheme\Assets\asset_path( 'images/favicon.ico' ); ?>" type="image/x-icon" />
-	<link rel="preconnect" href="https://www.gstatic.com">
-	<link rel="preconnect" href="https://www.google.com">
-
 	<?php wp_head(); ?>
 
 	<script type="text/javascript">
@@ -118,12 +114,10 @@
 			}
 		}
 
-
 		// commonjs
 		if( typeof exports !== "undefined" ){
 			exports.loadCSS = loadCSS;
-		}
-		else {
+		} else {
 			w.loadCSS = loadCSS;
 		}
 	}( typeof global !== "undefined" ? global : this ) );
