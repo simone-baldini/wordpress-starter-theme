@@ -1,6 +1,6 @@
 {
 	"name": "wordpress-starter-theme",
-	"version": "1.2.1",
+	"version": "1.4.0",
 	"description": "A productivity-driven WordPress starter theme with a modern development workflow.",
 	"main": "index.js",
 	"scripts": {
@@ -25,6 +25,7 @@
 		"del": "^6.0.0",
 		"eslint": "^7.25.0",
 		"gulp": "^4.0.0",
+		"gulp-brotli": "^3.0.0",
 		"gulp-buffer": "0.0.2",
 		"gulp-clone": "^2.0.1",
 		"gulp-dart-sass": "^1.0.2",
@@ -33,10 +34,12 @@
 		"gulp-tap": "^2.0.0",
 		"gulp-uglify": "^3.0.2",
 		"gulp-webp": "^4.0.1",
-		"stylelint": "^13.6.0"
+		"stylelint": "^13.6.0",
+		"zlib": "^1.0.5"
 	},
 	"dependencies": {
 		"bootstrap": "^4.6.0",
+		"jquery": "^3.6.0",
 		"quicklink": "^2.1.0"
 	}
 }

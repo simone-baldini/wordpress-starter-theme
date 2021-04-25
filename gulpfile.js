@@ -10,6 +10,8 @@ const del = require( 'del' );
 const clone = require( 'gulp-clone' );
 const webp = require( 'gulp-webp' );
 const purgecss = require( 'gulp-purgecss' );
+const brotli = require( 'gulp-brotli' );
+const zlib = require( 'zlib' );
 
 const server = browserSync.create();
 const config = {
@@ -103,12 +105,39 @@ gulp.task(
 			open: false,
 		} );
 
-		gulp.watch( config.styles.src, gulp.parallel( 'sass' ) );
-		gulp.watch( config.templates, gulp.parallel( 'sass' ) );
-		gulp.watch( config.scripts.src, gulp.parallel( 'js' ) );
+		gulp.watch( config.styles.src, gulp.series( 'sass', 'brotli-css' ) );
+		gulp.watch( config.templates, gulp.series( 'sass', 'brotli-css' ) );
+		gulp.watch( config.scripts.src, gulp.series( 'js', 'brotli-js' ) );
 		gulp.watch( config.fonts.src, gulp.parallel( 'fonts' ) );
 		gulp.watch( config.images.src, gulp.parallel( 'images' ) );
 	} )
 );
 
-gulp.task( 'default', gulp.parallel( [ 'clean', 'serve' ] ) );
+gulp.task( 'brotli-css', function () {
+	return gulp
+		.src( `${ config.styles.dest }/**/*.css` )
+		.pipe( brotli() )
+		.pipe( gulp.dest( config.styles.dest ) );
+} );
+
+gulp.task( 'brotli-js', function () {
+	return gulp
+		.src( `${ config.scripts.dest }/**/*.js` )
+		.pipe( brotli() )
+		.pipe( gulp.dest( config.scripts.dest ) );
+} );
+
+gulp.task(
+	'build',
+	gulp.series( [
+		'clean',
+		'sass',
+		'js',
+		'fonts',
+		'images',
+		'brotli-css',
+		'brotli-js',
+	] )
+);
+
+gulp.task( 'default', gulp.series( [ 'clean', 'serve' ] ) );
