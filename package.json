@@ -29,12 +29,14 @@
 		"gulp-clone": "^2.0.1",
 		"gulp-dart-sass": "^1.0.2",
 		"gulp-flatten": "^0.4.0",
+		"gulp-purgecss": "^4.0.3",
 		"gulp-tap": "^2.0.0",
 		"gulp-uglify": "^3.0.2",
 		"gulp-webp": "^4.0.1",
 		"stylelint": "^13.6.0"
 	},
 	"dependencies": {
-		"bootstrap": "^4.6.0"
+		"bootstrap": "^4.6.0",
+		"quicklink": "^2.1.0"
 	}
 }

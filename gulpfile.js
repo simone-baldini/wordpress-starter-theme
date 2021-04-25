@@ -9,10 +9,12 @@ const flatten = require( 'gulp-flatten' );
 const del = require( 'del' );
 const clone = require( 'gulp-clone' );
 const webp = require( 'gulp-webp' );
+const purgecss = require( 'gulp-purgecss' );
 
 const server = browserSync.create();
 const config = {
 	proxy: 'https://example.localhost',
+	templates: [ './**/*.php', './**/*.vue' ],
 	fonts: {
 		src: './assets/fonts/**/*.*',
 		dest: './dist/fonts/',
@@ -35,6 +37,11 @@ gulp.task( 'sass', function () {
 	return gulp
 		.src( config.styles.src )
 		.pipe( sass( { outputStyle: 'compressed' } ) )
+		.pipe(
+			purgecss( {
+				content: config.templates,
+			} )
+		)
 		.pipe( gulp.dest( config.styles.dest ) )
 		.pipe( server.stream() );
 } );
@@ -97,6 +104,7 @@ gulp.task(
 		} );
 
 		gulp.watch( config.styles.src, gulp.parallel( 'sass' ) );
+		gulp.watch( config.templates, gulp.parallel( 'sass' ) );
 		gulp.watch( config.scripts.src, gulp.parallel( 'js' ) );
 		gulp.watch( config.fonts.src, gulp.parallel( 'fonts' ) );
 		gulp.watch( config.images.src, gulp.parallel( 'images' ) );
