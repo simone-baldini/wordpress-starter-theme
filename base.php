@@ -4,7 +4,7 @@
 	<body <?php body_class(); ?>>
 		<script>
 			document.body.style.display = "none";
-			document.getElementById("core/css-css").addEventListener("load", function() {
+			document.getElementById("theme/css-css").addEventListener("load", function() {
 				document.body.style.display = "block";
 			});
 		</script>
