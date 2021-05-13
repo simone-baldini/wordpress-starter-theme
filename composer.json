@@ -11,22 +11,22 @@
 	],
 	"require": {
 		"symfony/console": "^5.2",
-		"simone-baldini/wordpress-starter-theme-installer": "^1.0"
+		"simone-baldini/wordpress-starter-theme-installer": "^1.0",
+		"squizlabs/php_codesniffer": "^3.6",
+		"wp-coding-standards/wpcs": "^2.3"
 	},
 	"homepage": "https://github.com/simone-baldini/wordpress-starter-theme/",
 	"keywords": [
-		"wordpress"
+		"wordpress",
+		"theme"
 	],
 	"support": {
 		"issues": "https://github.com/simone-baldini/wordpress-starter-theme/issues"
 	},
 	"prefer-stable": true,
 	"scripts": {
-		"post-autoload-dump": [
+		"post-create-project-cmd": [
 			"SimoneBaldini\\WordPressStarterTheme\\Installer::run"
-		],
-		"post-install-cmd": [
-			"npm install"
 		]
 	}
 }

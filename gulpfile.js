@@ -5,13 +5,14 @@ const browserSync = require( 'browser-sync' );
 const browserify = require( 'browserify' );
 const tap = require( 'gulp-tap' );
 const buffer = require( 'gulp-buffer' );
+const gulpif = require( 'gulp-if' );
 const flatten = require( 'gulp-flatten' );
 const del = require( 'del' );
 const clone = require( 'gulp-clone' );
 const webp = require( 'gulp-webp' );
 const purgecss = require( 'gulp-purgecss' );
 const brotli = require( 'gulp-brotli' );
-const zlib = require( 'zlib' );
+// const zlib = require( 'zlib' );
 
 const server = browserSync.create();
 const config = {
@@ -28,10 +29,12 @@ const config = {
 	styles: {
 		src: './assets/styles/**/*.scss',
 		dest: './dist/styles/',
+		purgecss: false,
 	},
 	scripts: {
 		src: './assets/scripts/**/*.js',
 		dest: './dist/scripts/',
+		uglify: true,
 	},
 };
 
@@ -40,9 +43,12 @@ gulp.task( 'sass', function () {
 		.src( config.styles.src )
 		.pipe( sass( { outputStyle: 'compressed' } ) )
 		.pipe(
-			purgecss( {
-				content: config.templates,
-			} )
+			gulpif(
+				config.styles.purgecss,
+				purgecss( {
+					content: config.templates,
+				} )
+			)
 		)
 		.pipe( gulp.dest( config.styles.dest ) )
 		.pipe( server.stream() );
@@ -63,7 +69,7 @@ gulp.task( 'js', function () {
 			} )
 		)
 		.pipe( buffer() )
-		.pipe( uglify() )
+		.pipe( gulpif( config.scripts.uglify, uglify() ) )
 		.pipe( gulp.dest( config.scripts.dest ) )
 		.pipe( server.stream() );
 } );

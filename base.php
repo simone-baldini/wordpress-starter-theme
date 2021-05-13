@@ -17,7 +17,6 @@
 		</main>
 		<?php
 			do_action( 'get_footer' );
-			get_template_part( 'templates/cookie-banner' );
 			get_template_part( 'templates/footer' );
 			wp_footer();
 		?>

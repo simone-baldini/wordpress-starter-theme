@@ -35,7 +35,8 @@
 		"gulp-uglify": "^3.0.2",
 		"gulp-webp": "^4.0.1",
 		"stylelint": "^13.6.0",
-		"zlib": "^1.0.5"
+		"zlib": "^1.0.5",
+		"gulp-if": "^3.0.0"
 	},
 	"dependencies": {
 		"bootstrap": "^4.6.0",
