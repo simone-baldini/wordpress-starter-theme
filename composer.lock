@@ -733,16 +733,16 @@
         },
         {
             "name": "simone-baldini/wordpress-starter-theme-installer",
-            "version": "1.2.1",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/simone-baldini/wordpress-starter-theme-installer.git",
-                "reference": "3255485b36bffd8a6119637d294c659cda6b3bc2"
+                "reference": "9ad264a8890386ab95502fed6e86d3f21ffab5ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simone-baldini/wordpress-starter-theme-installer/zipball/3255485b36bffd8a6119637d294c659cda6b3bc2",
-                "reference": "3255485b36bffd8a6119637d294c659cda6b3bc2",
+                "url": "https://api.github.com/repos/simone-baldini/wordpress-starter-theme-installer/zipball/9ad264a8890386ab95502fed6e86d3f21ffab5ca",
+                "reference": "9ad264a8890386ab95502fed6e86d3f21ffab5ca",
                 "shasum": ""
             },
             "require": {
@@ -768,9 +768,9 @@
             "description": "WordPress starter theme installer",
             "support": {
                 "issues": "https://github.com/simone-baldini/wordpress-starter-theme-installer/issues",
-                "source": "https://github.com/simone-baldini/wordpress-starter-theme-installer/tree/1.2.1"
+                "source": "https://github.com/simone-baldini/wordpress-starter-theme-installer/tree/1.2.3"
             },
-            "time": "2021-03-06T11:31:22+00:00"
+            "time": "2021-05-13T23:10:17+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
